@@ -4,9 +4,7 @@ import { Dropdown } from 'react-bootstrap'
 const FilterCourse = () => {
   return (
     <>
-
-    
-      {/* <Dropdown>
+      <Dropdown>
         <Dropdown.Toggle variant='success' id='dropdown-basic'>
           Filter
         </Dropdown.Toggle>
@@ -18,7 +16,7 @@ const FilterCourse = () => {
           <Dropdown.Item href='#/action-5'>2 Stars</Dropdown.Item>
           <Dropdown.Item href='#/action-6'>1 Stars</Dropdown.Item>
         </Dropdown.Menu>
-      </Dropdown> */}
+      </Dropdown>
     </>
   )
 }

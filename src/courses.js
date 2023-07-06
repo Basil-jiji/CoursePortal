@@ -43,12 +43,6 @@ const courses = [
       'C is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
     rating: '1.5',
-    reviews : {
-      id: 1,
-      name: "Akshay",
-      text: "This is a nice course",
-      rating: 5
-    }
   },
 ]
 

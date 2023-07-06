@@ -3,6 +3,7 @@ import { Container, Col, Row, Button, Dropdown, Card } from 'react-bootstrap'
 import '../styles/course-page.css'
 import courses from '../courses'
 import Rating from './Rating'
+import { Link } from 'react-router-dom'
 
 const CoursePage = () => {
   return (
@@ -13,12 +14,14 @@ const CoursePage = () => {
           <Col className='' sm={6}>
             <Dropdown>
               <Dropdown.Toggle variant='success' id='dropdown-basic'>
-               Filter
+                Filter
               </Dropdown.Toggle>
             </Dropdown>
           </Col>
           <Col sm={3} className='align-items-right'>
-            <Button className=''>Add Course</Button>
+            <Link to='/add'>
+              <Button variant='link'>Add Course</Button>
+            </Link>
           </Col>
           <Col sm={3}>
             <Button>Edit Course</Button>
@@ -27,12 +30,12 @@ const CoursePage = () => {
         <Row>
           <Col>
             {courses.map((course) => (
-              <Card>
+              <Card key={course.id}>
                 <Card.Title>{course.name}</Card.Title>
                 <Card.Body>
                   <Card.Text>
-                    <p>{course.description}</p>
-                    <Rating value={course.rating} color='gold'/>
+                    {course.description}
+                    <Rating value={course.rating} color='gold' />
                   </Card.Text>
                 </Card.Body>
               </Card>
