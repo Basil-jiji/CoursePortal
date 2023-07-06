@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import HomePage from './components/HomePage'
 import CoursePage from './components/CoursePage'
 import AboutPage from './components/AboutPage'
-import Banner from './components/Banner'
+import AddCourse from './components/AddCourse'
 
 const App = () => {
   return (
@@ -14,8 +14,9 @@ const App = () => {
       <main className=''>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/course' element={<CoursePage />} />
+          <Route path='/course' element={<CoursePage/>} />
           <Route path='/about' element={<AboutPage />} />
+          <Route path='/test' element={<AddCourse />} />
         </Routes>
       </main>
       <Footer />

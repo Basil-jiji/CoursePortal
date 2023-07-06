@@ -1,33 +1,42 @@
 import React from 'react'
-import { Container, Col, Row, Button, Dropdown } from 'react-bootstrap'
+import { Container, Col, Row, Button, Dropdown, Card } from 'react-bootstrap'
 import '../styles/course-page.css'
+import courses from '../courses'
+import Rating from './Rating'
 
 const CoursePage = () => {
   return (
     <>
       <h3 className='text-center py-3 px-3'>Course Page</h3>
       <Container>
-        <Row>
-          <Col>
-            <Button className=''>Add New Course</Button>
-          </Col>
-          <Col>
-            <Button className=''>Edit Course</Button>
-          </Col>
-          <Col className=''>
+        <Row className='py-3'>
+          <Col className='' sm={6}>
             <Dropdown>
               <Dropdown.Toggle variant='success' id='dropdown-basic'>
-                Filter
+               Filter
               </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href='#/action-1'>All</Dropdown.Item>
-                <Dropdown.Item href='#/action-2'>5 Stars</Dropdown.Item>
-                <Dropdown.Item href='#/action-3'>4 Stars</Dropdown.Item>
-                <Dropdown.Item href='#/action-4'>3 Stars</Dropdown.Item>
-                <Dropdown.Item href='#/action-5'>2 Stars</Dropdown.Item>
-                <Dropdown.Item href='#/action-6'>1 Stars</Dropdown.Item>
-              </Dropdown.Menu>
             </Dropdown>
+          </Col>
+          <Col sm={3} className='align-items-right'>
+            <Button className=''>Add Course</Button>
+          </Col>
+          <Col sm={3}>
+            <Button>Edit Course</Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {courses.map((course) => (
+              <Card>
+                <Card.Title>{course.name}</Card.Title>
+                <Card.Body>
+                  <Card.Text>
+                    <p>{course.description}</p>
+                    <Rating value={course.rating} color='gold'/>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
           </Col>
         </Row>
       </Container>

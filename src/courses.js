@@ -2,7 +2,7 @@ const courses = [
   {
     id: '1',
     name: 'JavaScript',
-    image: '/images/js,jpg',
+    image: '/images/js.jpg',
     description:
       'Javascript is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
@@ -15,7 +15,7 @@ const courses = [
     description:
       'Python is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '4.5',
+    rating: '4',
   },
   {
     id: '3',
@@ -24,7 +24,7 @@ const courses = [
     description:
       'Php is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '4.5',
+    rating: '3.5',
   },
   {
     id: '4',
@@ -33,7 +33,7 @@ const courses = [
     description:
       'Java is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '4.5',
+    rating: '3',
   },
   {
     id: '5',
@@ -42,7 +42,13 @@ const courses = [
     description:
       'C is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '4.5',
+    rating: '1.5',
+    reviews : {
+      id: 1,
+      name: "Akshay",
+      text: "This is a nice course",
+      rating: 5
+    }
   },
 ]
 

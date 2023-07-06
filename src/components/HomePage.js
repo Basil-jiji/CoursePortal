@@ -10,7 +10,6 @@ const HomePage = () => {
     <>
 
     <Banner />
-
       <h2 className='text-center py-3 px-3'>Top courses</h2>
       {courses.map((course) => (
           <TopCourses courses={course}/>
