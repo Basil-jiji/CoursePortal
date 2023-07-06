@@ -6,7 +6,7 @@ const courses = [
     description:
       'Javascript is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '4.5',
+    rating: '4',
   },
   {
     id: '2',
@@ -24,7 +24,7 @@ const courses = [
     description:
       'Php is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '3.5',
+    rating: '3',
   },
   {
     id: '4',
@@ -42,7 +42,7 @@ const courses = [
     description:
       'C is sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     featured: true,
-    rating: '1.5',
+    rating: '1',
   },
 ]
 

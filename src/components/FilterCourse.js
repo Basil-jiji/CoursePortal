@@ -1,22 +1,41 @@
-import React from 'react'
-import { Dropdown } from 'react-bootstrap'
+import React, { useMemo, useState } from 'react'
+import { Dropdown, Nav, NavDropdown } from 'react-bootstrap'
+import courses from '../courses'
 
 const FilterCourse = () => {
+  const [course, setCourse] = useState(courses)
+  const [rating, setRating] = useState()
+
+  const handleSelect = (eventKey) => {
+    setRating(eventKey)
+  }
+
+  function getFilteredList() {
+    if (!rating) {
+      return course
+    }
+    return course.filter((item) => item.rating.toString() === rating)
+  }
+
+  var filteredList = useMemo(getFilteredList, [rating, course])
+
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle variant='success' id='dropdown-basic'>
-          Filter
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item href='#/action-1'>All</Dropdown.Item>
-          <Dropdown.Item href='#/action-2'>5 Stars</Dropdown.Item>
-          <Dropdown.Item href='#/action-3'>4 Stars</Dropdown.Item>
-          <Dropdown.Item href='#/action-4'>3 Stars</Dropdown.Item>
-          <Dropdown.Item href='#/action-5'>2 Stars</Dropdown.Item>
-          <Dropdown.Item href='#/action-6'>1 Stars</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <Nav onSelect={handleSelect}>
+        <NavDropdown title='Filter'>
+          <NavDropdown.Item eventKey=''>All</NavDropdown.Item>
+          <NavDropdown.Item eventKey='5'>5 Start Rating</NavDropdown.Item>
+          <NavDropdown.Item eventKey='4'>4 Start Rating</NavDropdown.Item>
+          <NavDropdown.Item eventKey='3'>3 Start Rating</NavDropdown.Item>
+          <NavDropdown.Item eventKey='2'>2 Start Rating</NavDropdown.Item>
+          <NavDropdown.Item eventKey='1'>1 Start Rating</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      {filteredList.map((value) => (
+        <div key={value.id}>
+          <h1>{value.name}</h1>
+        </div>
+      ))}
     </>
   )
 }

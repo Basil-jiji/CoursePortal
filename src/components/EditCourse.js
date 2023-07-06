@@ -5,7 +5,7 @@ const EditCourse = () => {
   return (
     <>
       <Card className='bg-dark text-light w-50'>
-        <Card.Title>Course Name</Card.Title>
+        <Card.Title>Edit Course</Card.Title>
         <Card.Body>
           <Form>
             <Form.Group>
