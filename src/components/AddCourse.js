@@ -5,7 +5,7 @@ import courses from '../courses'
 const AddCourse = () => {
   const [course, setCourse] = useState(courses)
   const [name, setName] = useState('')
-  const [description, setDescription] = useState('')  
+  const [description, setDescription] = useState('')
 
   return (
     <>
@@ -32,22 +32,23 @@ const AddCourse = () => {
             <Button
               className='my-3'
               onClick={() =>
-                setCourse([...course,
+                setCourse([
+                  ...course,
                   {
                     id: Math.floor(Math.random() * 100),
                     name: name,
                     description: description,
                     image: null,
                     featured: null,
-                    rating: null
-                  }
+                    rating: Math.floor(Math.random() * 5),
+                  },
                 ])
               }
             >
               Add Course
             </Button>
             {console.log(course)}
-            {course.map((course)=>(
+            {course.map((course) => (
               <div key={course.id}>{course.name}</div>
             ))}
           </Form>

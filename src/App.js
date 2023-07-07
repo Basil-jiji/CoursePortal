@@ -7,6 +7,8 @@ import CoursePage from './components/CoursePage'
 import AboutPage from './components/AboutPage'
 import AddCourse from './components/AddCourse'
 
+//TODO : Use commented cards and stars of rating to filter component
+
 const App = () => {
   return (
     <BrowserRouter>
