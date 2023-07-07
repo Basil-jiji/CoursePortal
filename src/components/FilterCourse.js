@@ -44,6 +44,14 @@ const FilterCourse = () => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
 
+  const handleNameChange = (e) => {
+    setCourse({ ...course, name: e.target.value })
+  }
+
+  const handleDescriptionChange = (e) => {
+    setCourse({ ...course, description: e.target.value })
+  }
+
   return (
     <>
       <Container>
@@ -60,8 +68,8 @@ const FilterCourse = () => {
               </NavDropdown>
             </Nav>
           </Col>
-          <Col>
-            <Button variant='primary' onClick={handleShowAdd}>
+          <Col md={2} className='me-0 align-items-right'>
+            <Button variant='primary' className='w-100' onClick={handleShowAdd}>
               Add Course
             </Button>
             <Modal show={showadd} onHide={handleCloseAdd}>
@@ -120,7 +128,7 @@ const FilterCourse = () => {
         <Container className='my-3'>
           <Card key={value.id} className='border-0 filter-card'>
             <Card.Body>
-            <Card.Title>{value.name}</Card.Title>
+              <Card.Title>{value.name}</Card.Title>
               <Row>
                 <Col md={8}>
                   <Card.Text>
@@ -137,7 +145,27 @@ const FilterCourse = () => {
                     <Modal.Header closeButton>
                       <Modal.Title>Edit Course</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body></Modal.Body>
+                    <Modal.Body>
+                      {/* Edit Button */}
+                      <Form>
+                        <Form.Group>
+                          <Form.Label>Course Name</Form.Label>
+                          <Form.Control
+                            type='text'
+                            defaultValue={value.name}
+                            onChange={handleNameChange}
+                          ></Form.Control>
+                        </Form.Group>
+                        <Form.Group>
+                          <Form.Label>Course Description</Form.Label>
+                          <Form.Control
+                            type='text'
+                            value={value.description}
+                            onChange={handleDescriptionChange}
+                          ></Form.Control>
+                        </Form.Group>
+                      </Form>
+                    </Modal.Body>
                     <Modal.Footer>
                       <Button variant='secondary' onClick={handleClose}>
                         Close

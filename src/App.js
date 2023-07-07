@@ -5,9 +5,7 @@ import Footer from './components/Footer'
 import HomePage from './components/HomePage'
 import CoursePage from './components/CoursePage'
 import AboutPage from './components/AboutPage'
-import AddCourse from './components/AddCourse'
-
-//TODO : Use commented cards and stars of rating to filter component
+import AdminPage from './components/AdminPage'
 
 const App = () => {
   return (
@@ -16,9 +14,9 @@ const App = () => {
       <main className=''>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/course' element={<CoursePage/>} />
+          <Route path='/course' element={<CoursePage />} />
           <Route path='/about' element={<AboutPage />} />
-          <Route path='/add' element={<AddCourse />} />
+          <Route path='/admin' element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />
