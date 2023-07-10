@@ -1,5 +1,6 @@
 .review-card{
-    background-color: aqua;
+    background-color: rgb(0, 0, 0);
+    color: white;
     padding-left: 100px;
     padding-right: 100px;
     margin-bottom: 16px;

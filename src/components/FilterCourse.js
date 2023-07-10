@@ -14,6 +14,7 @@ import {
 import '../styles/filter-course.css'
 import courses from '../courses'
 import Rating from './Rating'
+import { Link } from 'react-router-dom'
 
 const FilterCourse = () => {
   const [course, setCourse] = useState(courses)
@@ -51,6 +52,8 @@ const FilterCourse = () => {
   const handleDescriptionChange = (e) => {
     setCourse({ ...course, description: e.target.value })
   }
+
+  const handleCard = () => {}
 
   return (
     <>
@@ -125,19 +128,29 @@ const FilterCourse = () => {
         </Row>
       </Container>
       {filteredList.map((value) => (
-        <Container className='my-3'>
-          <Card key={value.id} className='border-0 filter-card'>
-            <Card.Body>
-              <Card.Title>{value.name}</Card.Title>
-              <Row>
-                <Col md={8}>
-                  <Card.Text>
-                    {value.description}
-                    <Rating value={value.rating} color='gold' />
-                  </Card.Text>
-                </Col>
-              </Row>
-            </Card.Body>
+        <Container className='my-3' key={value.id}>
+          <Card
+            key={value.id}
+            className='border-0 filter-card'
+            onClick={handleCard}
+          >
+            <Link
+              className='text-decoration-none text-dark'
+              to={`/course/${value.id}`}
+            >
+              <Card.Body>
+                <Card.Title>{value.name}</Card.Title>
+                <Row>
+                  <Col>
+                    <Card.Text>
+                      <Col className='text-wrap'>{value.description}</Col>
+                      <Rating value={value.rating} color='gold' />
+                    </Card.Text>
+                      <Button>View Details</Button>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Link>
           </Card>
         </Container>
       ))}

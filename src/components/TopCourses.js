@@ -1,34 +1,34 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
+import '../styles/top-courses.css'
 import courses from '../courses'
 import Rating from './Rating'
+import { Link } from 'react-router-dom'
 
 const TopCourses = () => {
-  //Sort and Slice
 
   const newcoursedata = [...courses].sort((a, b) => b.rating - a.rating)
-  console.log(newcoursedata)
   const topTwoData = newcoursedata.slice(0, 2)
-  console.log(topTwoData)
   return (
     <Container>
+      <Row>
       <h2 className='text-center py-3 px-3'>Top courses</h2>
       {topTwoData.map((top) => (
-        <Row>
-          <Col md={5} className='py-2'>
-            <Card>
+          <Col key={top.id}>
+            <Link></Link>
+            <Card className='topcourse-card'>
               <Card.Body>
                 <Card.Title>{top.name}</Card.Title>
                 {top.description}
-
-                <Col>
+                <Col className='py-1'>
                   <Rating value={top.rating} />
                 </Col>
+                <Col><Link to='#'>Read More</Link></Col>
               </Card.Body>
             </Card>
           </Col>
-        </Row>
       ))}
+      </Row>
     </Container>
   )
 }

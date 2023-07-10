@@ -5,8 +5,8 @@ import '../styles/banner.css'
 const Banner = () => {
   return (
     <>
-    <Image src='images/banner.jpg' alt='banner' className='banner' fluid/>
-        </>
+      <Image src='./images/banner.jpg' alt='banner' className='banner' fluid />
+    </>
   )
 }
 

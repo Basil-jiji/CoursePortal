@@ -25,7 +25,6 @@ const CourseForm = ({ addCourse, addDescription }) => {
               onChange={(e) => setValue(e.target.value)}
               value={value}
             />
-
             <Button type='submit' className='btn'>
               Add
             </Button>

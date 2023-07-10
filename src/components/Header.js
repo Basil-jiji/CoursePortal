@@ -15,23 +15,23 @@ const Header = () => {
       >
         <Container>
           <Link to='/' className='text-decoration-none'>
-            <Navbar.Brand>CTL</Navbar.Brand>
+            <Navbar.Brand>CLP</Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto py-2 '>
-              <Link to='/' className='pe-2 text-decoration-none text-light'>
+              <Link to='/' className='pe-4 text-decoration-none text-light'>
                 Home
               </Link>
               <Link
                 to='/course'
-                className='pe-2 text-decoration-none text-light'
+                className='pe-4 text-decoration-none text-light'
               >
                 Course
               </Link>
               <Link
                 to='/about'
-                className='pe-2 text-decoration-none text-light'
+                className='pe-4 text-decoration-none text-light'
               >
                 About Us
               </Link>

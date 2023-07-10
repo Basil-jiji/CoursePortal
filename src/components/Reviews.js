@@ -13,11 +13,11 @@ const Reviews = () => {
           <Col>
             <Carousel data-bs-theme='light'>
               {reviews.map((review) => (
-                <Carousel.Item>
+                <Carousel.Item key={review.id}>
                   <Card className='review-card'>
                     <Card.Body>
                       <Card.Title>{review.name}</Card.Title>
-                      <Card.Text>{review.description}</Card.Text>
+                      <Card.Text>"{review.description}"</Card.Text>
                       <Rating value={review.rating} />
                     </Card.Body>
                   </Card>
