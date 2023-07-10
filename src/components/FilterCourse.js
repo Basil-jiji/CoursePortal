@@ -136,50 +136,6 @@ const FilterCourse = () => {
                     <Rating value={value.rating} color='gold' />
                   </Card.Text>
                 </Col>
-                <Col>
-                  <Button variant='primary' onClick={handleShow}>
-                    Edit Course
-                  </Button>
-
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Edit Course</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      {/* Edit Button */}
-                      <Form>
-                        <Form.Group>
-                          <Form.Label>Course Name</Form.Label>
-                          <Form.Control
-                            type='text'
-                            defaultValue={value.name}
-                            onChange={handleNameChange}
-                          ></Form.Control>
-                        </Form.Group>
-                        <Form.Group>
-                          <Form.Label>Course Description</Form.Label>
-                          <Form.Control
-                            type='text'
-                            value={value.description}
-                            onChange={handleDescriptionChange}
-                          ></Form.Control>
-                        </Form.Group>
-                      </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant='secondary' onClick={handleClose}>
-                        Close
-                      </Button>
-                      <Button variant='primary' onClick={handleClose}>
-                        Save Changes
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                </Col>
-                <Col>
-                  {' '}
-                  <Button variant='danger'>Delete</Button>{' '}
-                </Col>
               </Row>
             </Card.Body>
           </Card>

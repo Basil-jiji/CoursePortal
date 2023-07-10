@@ -1,0 +1,11 @@
+.review-card{
+    background-color: aqua;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 16px;
+}
+
+.carousel-indicators{
+    display: none;
+}
+

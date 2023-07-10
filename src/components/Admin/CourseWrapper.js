@@ -9,10 +9,12 @@ uuidv4()
 const CourseWrapper = () => {
   const [courses, setCourses] = useState([])
 
-  const addCourse = (course) => {
-    setCourses([...courses, { id: uuidv4(), task: course, isEditing: false }])
+  const addCourse = (course, description) => {
+    setCourses([...courses, { id: uuidv4(), task: course, descritption: description, isEditing: false }])
     console.log(courses)
   }
+
+
 
   const deleteCourse = (id) => {
     setCourses(courses.filter((course) => course.id !== id))
@@ -38,14 +40,15 @@ const CourseWrapper = () => {
   return (
     <>
       <div>
-        <h2 className='text-center'>Course List</h2>
-        <CourseForm addCourse={addCourse} />
+        <h2 className='text-center my-3'>Course List</h2>
+        <CourseForm addCourse={addCourse}  />
         {courses.map((course, index) =>
           course.isEditing ? (
             <EditCourse editCourse={editTask} task={course} />
           ) : (
             <Course
               task={course}
+              
               key={index}
               deleteCourse={deleteCourse}
               editCourse={editCourse}
