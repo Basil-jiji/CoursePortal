@@ -6,6 +6,7 @@ import HomePage from './components/HomePage'
 import CoursePage from './components/CoursePage'
 import AboutPage from './components/AboutPage'
 import AdminPage from './components/AdminPage'
+import CourseWrapper from './components/Admin/CourseWrapper'
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='/course' element={<CoursePage />} />
           <Route path='/about' element={<AboutPage />} />
-          <Route path='/admin' element={<AdminPage />} />
+          <Route path='/admin' element={<CourseWrapper />} />
         </Routes>
       </main>
       <Footer />
