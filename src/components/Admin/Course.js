@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 
 const Course = ({ task, deleteCourse, editCourse }) => {
@@ -9,7 +9,8 @@ const Course = ({ task, deleteCourse, editCourse }) => {
           <Card className='my-3'>
             <Card.Body>
               <Card.Text>
-                <p>{task.task}</p>
+                <h5>{task.name}</h5>
+                <p>{task.description}</p>
                 <p>{task.id}</p>
               </Card.Text>
               <Row>

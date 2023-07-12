@@ -7,32 +7,33 @@ import EditCourse from './EditCourse'
 uuidv4()
 
 const CourseWrapper = () => {
-  const [courses, setCourses] = useState([])
+  const [course, setCourses] = useState(courses)
 
-  const addCourse = (course, description) => {
-    setCourses([...courses, { id: uuidv4(), task: course, descritption: description, isEditing: false }])
-    console.log(courses)
+  const addCourse = (name, description) => {
+    setCourses([
+      ...course,
+      { id: uuidv4(), name: name, descritption: description, isEditing: false },
+    ])
+    console.log(course)
   }
 
-
-
   const deleteCourse = (id) => {
-    setCourses(courses.filter((course) => course.id !== id))
+    setCourses(course.filter((course) => course.id !== id))
   }
 
   const editCourse = (id) => {
     setCourses(
-      courses.map((course) =>
+      course.map((course) =>
         course.id === id ? { ...course, isEditing: !course.isEditing } : course
       )
     )
   }
 
-  const editTask = (task, id) => {
+  const editName = (name, id) => {
     setCourses(
-      courses.map((course) =>
+      course.map((course) =>
         course.id === id
-          ? { ...course, task, isEditing: !course.isEditing }
+          ? { ...course, name, isEditing: !course.isEditing }
           : course
       )
     )
@@ -41,14 +42,13 @@ const CourseWrapper = () => {
     <>
       <div>
         <h2 className='text-center my-3'>Course List</h2>
-        <CourseForm addCourse={addCourse}  />
-        {courses.map((course, index) =>
+        <CourseForm addCourse={addCourse} />
+        {course.map((course, index) =>
           course.isEditing ? (
-            <EditCourse editCourse={editTask} task={course} />
+            <EditCourse editCourse={editName} task={course} />
           ) : (
             <Course
               task={course}
-              
               key={index}
               deleteCourse={deleteCourse}
               editCourse={editCourse}

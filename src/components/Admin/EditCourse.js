@@ -13,8 +13,8 @@ const EditCourse = ({ editCourse, task }) => {
   }
   return (
     <Container>
-        <Form className='form' onSubmit={handleSubmit}>
-      <Row>
+      <Form className='form' onSubmit={handleSubmit}>
+        <Row>
           <Col>
             <Form.Control
               type='text'
@@ -29,8 +29,8 @@ const EditCourse = ({ editCourse, task }) => {
               Update Course
             </Button>
           </Col>
-      </Row>
-        </Form>
+        </Row>
+      </Form>
     </Container>
   )
 }

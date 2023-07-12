@@ -1,6 +1,5 @@
 import React from 'react'
 import { Col, Container, Row, Image } from 'react-bootstrap'
-import '../styles/about-page.css'
 
 const AboutPage = () => {
   return (

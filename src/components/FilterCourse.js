@@ -4,7 +4,6 @@ import {
   Card,
   Col,
   Container,
-  Dropdown,
   Modal,
   Nav,
   NavDropdown,
@@ -15,6 +14,8 @@ import '../styles/filter-course.css'
 import courses from '../courses'
 import Rating from './Rating'
 import { Link } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+uuidv4()
 
 const FilterCourse = () => {
   const [course, setCourse] = useState(courses)
@@ -33,11 +34,7 @@ const FilterCourse = () => {
 
   var filteredList = useMemo(getFilteredList, [rating, course])
 
-  const [show, setShow] = useState(false)
   const [showadd, setShowAdd] = useState(false)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
 
   const handleCloseAdd = () => setShowAdd(false)
   const handleShowAdd = () => setShowAdd(true)
@@ -45,15 +42,19 @@ const FilterCourse = () => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
 
-  const handleNameChange = (e) => {
-    setCourse({ ...course, name: e.target.value })
+  const addCourse = ( ) => {
+    setCourse([
+      ...course,
+          {
+            id: uuidv4(),
+            name: name,
+            description: description,
+            image: null,
+            featured: null,
+            rating: Math.floor(Math.random() * 5),
+          },
+    ])
   }
-
-  const handleDescriptionChange = (e) => {
-    setCourse({ ...course, description: e.target.value })
-  }
-
-  const handleCard = () => {}
 
   return (
     <>
@@ -72,7 +73,7 @@ const FilterCourse = () => {
             </Nav>
           </Col>
           <Col md={2} className='me-0 align-items-right'>
-            <Button variant='primary' className='w-100' onClick={handleShowAdd}>
+            <Button disabled variant='primary' className='w-100' onClick={handleShowAdd}>
               Add Course
             </Button>
             <Modal show={showadd} onHide={handleCloseAdd}>
@@ -100,23 +101,7 @@ const FilterCourse = () => {
                 </Form>
               </Modal.Body>
               <Modal.Footer>
-                <Button
-                  className='my-3'
-                  variant='success'
-                  onClick={() =>
-                    setCourse([
-                      ...course,
-                      {
-                        id: Math.floor(Math.random() * 100),
-                        name: name,
-                        description: description,
-                        image: null,
-                        featured: null,
-                        rating: Math.floor(Math.random() * 5),
-                      },
-                    ])
-                  }
-                >
+                <Button className='my-3' variant='success' onClick={addCourse}>
                   Save
                 </Button>
                 <Button variant='danger' onClick={handleCloseAdd}>
@@ -129,11 +114,7 @@ const FilterCourse = () => {
       </Container>
       {filteredList.map((value) => (
         <Container className='my-3' key={value.id}>
-          <Card
-            key={value.id}
-            className='border-0 filter-card'
-            onClick={handleCard}
-          >
+          <Card key={value.id} className='border-0 filter-card'>
             <Link
               className='text-decoration-none text-dark'
               to={`/course/${value.id}`}
@@ -146,7 +127,7 @@ const FilterCourse = () => {
                       <Col className='text-wrap'>{value.description}</Col>
                       <Rating value={value.rating} color='gold' />
                     </Card.Text>
-                      <Button>View Details</Button>
+                    <Button variant='outline-primary'>View Details</Button>
                   </Col>
                 </Row>
               </Card.Body>

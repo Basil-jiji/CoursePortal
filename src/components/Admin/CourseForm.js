@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { Button, Container, Form } from 'react-bootstrap'
 
-const CourseForm = ({ addCourse, addDescription }) => {
+const CourseForm = ({ addCourse }) => {
   const [value, setValue] = useState('')
-  const [description, setDescription] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,9 +14,9 @@ const CourseForm = ({ addCourse, addDescription }) => {
   return (
     <>
       <Container>
-        <Form className='' onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Form.Group className='mb-3'>
-            <Form.Label>Add Course</Form.Label>
+            <Form.Label>Course Name</Form.Label>
             <Form.Control
               type='text'
               className='my-2'

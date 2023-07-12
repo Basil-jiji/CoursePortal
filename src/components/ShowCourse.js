@@ -19,14 +19,14 @@ const ShowCourse = () => {
           Go Back
         </Link>
         <Row>
-          <h1>{course.name} </h1>
+          <h1 className='text-center my-3'>{course.name} </h1>
           <p>{course.description} </p>
         </Row>
         <Col>
           Rating : <Rating value={course.rating} />
         </Col>
         <Col className='py-3 text-end'>
-          <Button>Buy Now</Button>
+          <Button variant='outline-primary'>Enroll Now</Button>
         </Col>
       </Container>
     </>

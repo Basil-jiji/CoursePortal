@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/course-page.css'
 
 import FilterCourse from './FilterCourse'
 

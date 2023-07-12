@@ -15,10 +15,9 @@ const TopCourses = () => {
       <h2 className='text-center py-3 px-3'>Top courses</h2>
       {topTwoData.map((top) => (
           <Col key={top.id}>
-            <Link></Link>
             <Card className='topcourse-card'>
               <Card.Body>
-                <Card.Title>{top.name}</Card.Title>
+                <Card.Title className='text-center'>{top.name}</Card.Title>
                 {top.description}
                 <Col className='py-1'>
                   <Rating value={top.rating} />
