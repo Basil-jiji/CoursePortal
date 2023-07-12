@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 
-const Course = ({ task, deleteCourse, editCourse }) => {
+const Course = ({ course, deleteCourse, editCourse }) => {
   return (
     <>
       <Container>
@@ -9,18 +9,18 @@ const Course = ({ task, deleteCourse, editCourse }) => {
           <Card className='my-3'>
             <Card.Body>
               <Card.Text>
-                <h5>{task.name}</h5>
-                <p>{task.description}</p>
-                <p>{task.id}</p>
+                <h5>Course Name : {course.name}</h5>
+                Course Description : <p>{course.description}</p>
+                <p>Course ID : {course.id}</p>
               </Card.Text>
               <Row>
                 <Col md={1}>
-                  <Button onClick={() => editCourse(task.id)}>Edit</Button>
+                  <Button onClick={() => editCourse(course.id)}>Edit</Button>
                 </Col>
                 <Col>
                   <Button
                     onClick={() => {
-                      deleteCourse(task.id)
+                      deleteCourse(course.id)
                     }}
                   >
                     Delete

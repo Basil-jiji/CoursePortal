@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 
-const EditCourse = ({ editCourse, task }) => {
+const EditCourse = ({ editCourse, course }) => {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    editCourse(value, task.id)
+    editCourse(value, course.id)
 
     setValue('')
   }

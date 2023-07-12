@@ -45,10 +45,10 @@ const CourseWrapper = () => {
         <CourseForm addCourse={addCourse} />
         {course.map((course, index) =>
           course.isEditing ? (
-            <EditCourse editCourse={editName} task={course} />
+            <EditCourse editCourse={editName} course={course} />
           ) : (
             <Course
-              task={course}
+              course={course}
               key={index}
               deleteCourse={deleteCourse}
               editCourse={editCourse}
